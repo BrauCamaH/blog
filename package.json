@@ -1,18 +1,35 @@
 {
-  "name": "gatsby-starter-blog-theme",
-  "private": true,
+  "name": "blog",
   "version": "0.0.1",
+  "description": "My personarl portfolio and with some blogs",
+  "main": "index.js",
   "scripts": {
-    "develop": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "clean": "gatsby clean"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "gatsby develop"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BrauCamaH/blog.git"
+  },
+  "keywords": [
+    "gatsby",
+    "react",
+    "mdx"
+  ],
+  "author": "Braulio Guadalupe Camarena Huerta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BrauCamaH/blog/issues"
+  },
+  "homepage": "https://github.com/BrauCamaH/blog#readme",
   "dependencies": {
     "gatsby": "^2.23.12",
-    "gatsby-theme-blog": "^1.6.51",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "theme-ui": "^0.2.52"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.3.1",
+    "eslint-plugin-react": "^7.20.3",
+    "prettier": "^2.0.5"
   }
 }

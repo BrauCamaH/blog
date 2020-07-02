@@ -3,18 +3,26 @@ import { ThemeProvider } from 'emotion-theming';
 import Layout from '../components/layout';
 import { darkTheme, defaultTheme } from '../theme';
 
+const ThemeContext = React.createContext({
+  isDark: false,
+  setIsDark: () => {},
+});
+
 const App = () => {
-  const [isDark] = useState(false);
+  const [isDark, setIsDark] = useState(false);
   return (
     <ThemeProvider theme={isDark ? darkTheme : defaultTheme}>
-      <Layout>
-        <div>
-          Hello
-          <h1>This is my blog</h1>
-        </div>
-      </Layout>
+      <ThemeContext.Provider value={{ isDark, setIsDark }}>
+        <Layout>
+          <div>
+            Hello
+            <h1>This is my blog</h1>
+          </div>
+        </Layout>
+      </ThemeContext.Provider>
     </ThemeProvider>
   );
 };
 
+export { ThemeContext };
 export default App;

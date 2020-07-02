@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { ThemeContext } from '../pages';
 import styled from '@emotion/styled';
 
 const CheckBoxWrapper = styled.div`
@@ -46,9 +47,17 @@ const CheckBox = styled.input`
 `;
 
 const Toggle = () => {
+  const context = useContext(ThemeContext);
   return (
     <CheckBoxWrapper>
-      <CheckBox id="checkbox" type="checkbox" />
+      <CheckBox
+        id="checkbox"
+        type="checkbox"
+        checked={context.isDark}
+        onChange={() => {
+          context.setIsDark(!context.isDark);
+        }}
+      />
       <CheckBoxLabel htmlFor="checkbox" />
     </CheckBoxWrapper>
   );

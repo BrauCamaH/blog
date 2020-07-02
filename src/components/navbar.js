@@ -29,15 +29,32 @@ const Navbar = () => {
         padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
       `}
     >
-      <NavLink to="/" activeClassName="current-page">
-        Home
-      </NavLink>
-      <NavLink to="/about/" activeClassName="current-page">
-        About
-      </NavLink>
-      <NavLink to="/contact/" activeClassName="current-page">
-        Contact
-      </NavLink>
+      <Link
+        css={css`
+          color: ${theme.accent};
+          font-size: 1.2rem;
+          margin: 0 0.5rem 0 0;
+          padding: 0.25rem;
+          text-decoration: none;
+        `}
+        to="/"
+        activeClassName="current-page"
+      >
+        Braulio Camarena
+      </Link>
+      <div
+        css={css`
+          margin: 0 0.5rem 0 0;
+          padding: 0.25rem;
+        `}
+      >
+        <NavLink to="/about/" activeClassName="current-page">
+          Acerca de
+        </NavLink>
+        <NavLink to="/contact/" activeClassName="current-page">
+          Contacto
+        </NavLink>
+      </div>
       <Toggle />
     </nav>
   );

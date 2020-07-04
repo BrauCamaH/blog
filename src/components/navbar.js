@@ -2,18 +2,26 @@ import React from 'react';
 import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
 import { css } from '@emotion/core';
+import mq from '../util/breakpoints';
 
 import Toggle from './toggle';
+import MobileNav from './mobile-nav';
 import { Link } from 'gatsby';
+
+import profile from '../images/profile.jpg';
 
 const NavLink = styled(Link)`
   color: ${(props) => props.theme.accent};
   font-size: 1rem;
-  margin: 0 0.5rem 0 0;
   padding: 0.25rem;
+  background: transparent;
+  margin-left: 0.5rem;
   text-decoration: none;
   &.current-page {
     border-bottom: 2px solid ${(props) => props.theme.secondary};
+  }
+  ${mq[1]} {
+    display: none;
   }
 `;
 
@@ -22,40 +30,89 @@ const Navbar = () => {
   return (
     <nav
       css={css`
+        grid-area: navbar;
         background: ${theme.primary};
-        border-bottom: 1px solid #ddd;
         display: flex;
-        justify-content: space-between;
-        padding: 0.5rem calc((100vw - 550px - 0.5rem) / 2);
+        justify-content: space-around;
+        align-items: center;
+        padding: 0.5rem 0;
+        .mobile-nav {
+          display: none;
+        }
+        .mobile-nav {
+          ${mq[1]} {
+            display: block;
+            visibility: visible;
+          }
+        }
       `}
     >
-      <Link
-        css={css`
-          color: ${theme.accent};
-          font-size: 1.2rem;
-          margin: 0 0.5rem 0 0;
-          padding: 0.25rem;
-          text-decoration: none;
-        `}
-        to="/"
-        activeClassName="current-page"
-      >
-        Braulio Camarena
-      </Link>
+      <div>
+        <img
+          css={css`
+            width: 50px;
+            height: 50px;
+            vertical-align: middle;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            margin-left: 6rem;
+            ${mq[1]} {
+              margin-left: 1rem;
+            }
+            ${mq[0]} {
+              display: none;
+            }
+          `}
+          src={profile}
+          alt="profile photo"
+        />
+        <Link
+          css={css`
+            color: ${theme.accent};
+            font-size: 1.2rem;
+            margin: 0 0.5rem 0 0;
+            padding: 0.25rem;
+            text-decoration: none;
+            ${mq[0]} {
+              padding: 0;
+              margin: 0 0 0 0.5rem;
+            }
+          `}
+          to="/"
+          activeClassName="current-page"
+        >
+          Braulio Camarena
+        </Link>
+      </div>
       <div
         css={css`
-          margin: 0 0.5rem 0 0;
+          margin: 0 1rem 0 0;
           padding: 0.25rem;
         `}
       >
         <NavLink to="/about/" activeClassName="current-page">
-          Acerca de
+          Blog
+        </NavLink>
+        <NavLink to="/contact/" activeClassName="current-page">
+          Acerca
         </NavLink>
         <NavLink to="/contact/" activeClassName="current-page">
           Contacto
         </NavLink>
       </div>
-      <Toggle />
+      <Toggle
+        css={css`
+          margin-right: 6rem;
+          ${mq[1]} {
+            margin-right: 1rem;
+          }
+          ${mq[0]} {
+            margin-right: 0;
+          }
+        `}
+        className="dark-theme"
+      />
+      <MobileNav />
     </nav>
   );
 };

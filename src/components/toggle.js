@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../pages';
 import styled from '@emotion/styled';
+import mq from '../util/breakpoints';
 
 const CheckBoxWrapper = styled.div`
   position: relative;
@@ -46,10 +47,10 @@ const CheckBox = styled.input`
   }
 `;
 
-const Toggle = () => {
+const Toggle = ({ ...rest }) => {
   const context = useContext(ThemeContext);
   return (
-    <CheckBoxWrapper>
+    <CheckBoxWrapper {...rest}>
       <CheckBox
         id="checkbox"
         type="checkbox"

@@ -1,7 +1,7 @@
 {
   "name": "blog",
   "version": "0.0.1",
-  "description": "My personarl portfolio and with some blogs",
+  "description": "My personal portfolio and with some blogs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -30,7 +30,6 @@
     "gatsby-plugin-emotion": "^4.3.6",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
-    "react-burger-menu": "^2.6.17",
     "react-dom": "^16.13.1"
   },
   "devDependencies": {

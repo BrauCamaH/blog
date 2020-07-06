@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Global, css } from '@emotion/core';
 import { useTheme } from 'emotion-theming';
+import mq from '../util/breakpoints';
 
 import Navbar from './navbar';
 
@@ -37,15 +38,32 @@ const Layout = ({ children }) => {
           }
         `}
       />
-      <Navbar />
-      <main
+      <div
         css={css`
-          margin: 2rem auto;
-          max-width: 600px;
+          display: grid;
+          grid-template-columns: 1fr 4fr 1fr;
+          grid-template-areas:
+            'navbar navbar navbar'
+            '.   .  .'
+            '. main .'
+            '.   .  .';
+          ${mq[1]} {
+            grid-template-columns: 1fr 10fr 1fr;
+          }
+          ${mq[0]} {
+            grid-template-columns: 1fr 16fr 1fr;
+          }
         `}
       >
-        {children}
-      </main>
+        <Navbar />
+        <main
+          css={css`
+            grid-area: main;
+          `}
+        >
+          {children}
+        </main>
+      </div>
     </>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react';
-import { ThemeContext } from '../pages';
+import { ThemeManagerContext } from 'gatsby-emotion-dark-mode';
 import styled from '@emotion/styled';
-import mq from '../util/breakpoints';
 
 const CheckBoxWrapper = styled.div`
   position: relative;
@@ -48,15 +47,15 @@ const CheckBox = styled.input`
 `;
 
 const Toggle = ({ ...rest }) => {
-  const context = useContext(ThemeContext);
+  const theme = useContext(ThemeManagerContext);
   return (
     <CheckBoxWrapper {...rest}>
       <CheckBox
         id="checkbox"
         type="checkbox"
-        checked={context.isDark}
+        checked={theme.isDark}
         onChange={() => {
-          context.setIsDark(!context.isDark);
+          theme.toggleDark(!theme.isDark);
         }}
       />
       <CheckBoxLabel htmlFor="checkbox" />

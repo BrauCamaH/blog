@@ -7,13 +7,10 @@ import PropTypes from 'prop-types';
 const PostPreview = ({ post }) => (
   <article
     css={css`
-      border-bottom: 1px solid #ddd;
       margin-top: 0.75rem;
-      padding-bottom: 1rem;
-
-      :first-of-type {
-        margin-top: 1rem;
-      }
+      padding: 1rem;
+      background-color: rgba(0, 0, 0, 0.05);
+      border-radius: 0.5rem;
     `}
   >
     <h3>

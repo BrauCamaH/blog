@@ -90,10 +90,10 @@ const Navbar = () => {
           padding: 0.25rem;
         `}
       >
-        <NavLink to="/about/" activeClassName="current-page">
+        <NavLink to="/blog/" activeClassName="current-page">
           Blog
         </NavLink>
-        <NavLink to="/contact/" activeClassName="current-page">
+        <NavLink to="/about/" activeClassName="current-page">
           Acerca
         </NavLink>
         <NavLink to="/contact/" activeClassName="current-page">

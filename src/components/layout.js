@@ -17,6 +17,9 @@ const Layout = ({ children }) => {
             margin: 0;
             background-color: ${theme.background};
             color: ${theme.text};
+            font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+              sans-serif;
             font-size: 18px;
           }
           h1,
@@ -27,7 +30,9 @@ const Layout = ({ children }) => {
           h6 {
             color: ${theme.text};
             line-height: 1.1;
-
+            font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+              Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue',
+              sans-serif;
             + * {
               margin-top: 0.5rem;
             }

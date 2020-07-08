@@ -3,7 +3,7 @@ import { css } from '@emotion/core';
 import styled from '@emotion/styled';
 import { useTheme } from 'emotion-theming';
 
-import { Link } from 'gatsby';
+import { useTranslation, Link } from '@3nvi/gatsby-theme-intl';
 
 const NavLink = styled(Link)`
   color: ${(props) => props.theme.secondary};
@@ -15,6 +15,7 @@ const NavLink = styled(Link)`
 
 const Toggle = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
   const color = 'white';
   const [isToggledOn, setToggle] = useState(false);
   const toggle = () => setToggle(!isToggledOn);
@@ -100,13 +101,13 @@ const Toggle = () => {
           `}
         >
           <NavLink to="/blog/" activeClassName="current-page">
-            Blog
+            {t('nav.blog')}
           </NavLink>
           <NavLink to="/about/" activeClassName="current-page">
-            Acerca
+            {t('nav.about')}
           </NavLink>
           <NavLink to="/contact/" activeClassName="current-page">
-            Contacto
+            {t('nav.contact')}
           </NavLink>
         </div>
       )}

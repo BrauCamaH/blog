@@ -1,0 +1,32 @@
+{
+  "en": {
+    "translation": {
+      "info": {
+        "about": "I am a programmer, how loves lean new kind of stuff"
+      },
+      "nav": {
+        "about": "About",
+        "blog": "Blog",
+        "contact": "Contact"
+      },
+      "common": {
+        "read": "read this post"
+      }
+    }
+  },
+  "es": {
+    "translation": {
+      "info": {
+        "about": "Soy un programador, quien le encantaba aprender nuevas cosas"
+      },
+      "nav": {
+        "about": "Acerca",
+        "blog": "Blog",
+        "contact": "Contacto"
+      },
+      "common": {
+        "read": "lee la siguiente publicación"
+      }
+    }
+  }
+}

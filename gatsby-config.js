@@ -1,5 +1,6 @@
 const lightTheme = require('./theme/default-theme');
 const darkTheme = require('./theme/dark-theme');
+const resources = require('./i18n.json');
 
 module.exports = {
   siteMetadata: {
@@ -28,6 +29,16 @@ module.exports = {
       options: {
         light: lightTheme,
         dark: darkTheme,
+      },
+    },
+    {
+      resolve: `@3nvi/gatsby-theme-intl`,
+      options: {
+        supportedLanguages: ['en', 'es'],
+        defaultLanguage: 'es',
+        i18nextConfig: {
+          resources,
+        },
       },
     },
   ],

@@ -1,4 +1,4 @@
-export default {
+module.exports = {
   primary: '#1D809F',
   secondary: '#BCE7FD',
   info: '#D34E24',
@@ -7,5 +7,5 @@ export default {
   buttonText: '#ffffff',
   buttonHover: '#000',
   text: '#ffffff',
-  background: '#121212',
+  background: '#38383D',
 };

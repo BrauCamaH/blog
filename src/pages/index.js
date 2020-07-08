@@ -1,28 +1,23 @@
-import React, { useState } from 'react';
-import { ThemeProvider } from 'emotion-theming';
+import React from 'react';
+import PostPreview from '../components/posts-preview';
+import usePosts from '../hooks/use-posts';
+import useMetadata from '../hooks/use-metadata';
 import Layout from '../components/layout';
-import { darkTheme, defaultTheme } from '../theme';
-
-const ThemeContext = React.createContext({
-  isDark: false,
-  setIsDark: () => {},
-});
 
 const App = () => {
-  const [isDark, setIsDark] = useState(false);
+  const posts = usePosts();
+  const metadata = useMetadata();
   return (
-    <ThemeProvider theme={isDark ? darkTheme : defaultTheme}>
-      <ThemeContext.Provider value={{ isDark, setIsDark }}>
-        <Layout>
-          <div>
-            Hello
-            <h1>This is my blog</h1>
-          </div>
-        </Layout>
-      </ThemeContext.Provider>
-    </ThemeProvider>
+    <Layout>
+      <div>
+        <h1>{metadata.title}</h1>
+        <p>{metadata.description}</p>
+        {posts.map((post) => (
+          <PostPreview key={post.slug} post={post} />
+        ))}
+      </div>
+    </Layout>
   );
 };
 
-export { ThemeContext };
 export default App;

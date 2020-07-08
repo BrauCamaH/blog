@@ -9,11 +9,13 @@ const App = () => {
   const metadata = useMetadata();
   return (
     <Layout>
-      <h1>{metadata.title}</h1>
-      <p>{metadata.description}</p>
-      {posts.map((post) => (
-        <PostPreview key={post.slug} post={post} />
-      ))}
+      <div>
+        <h1>{metadata.title}</h1>
+        <p>{metadata.description}</p>
+        {posts.map((post) => (
+          <PostPreview key={post.slug} post={post} />
+        ))}
+      </div>
     </Layout>
   );
 };

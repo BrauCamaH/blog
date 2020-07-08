@@ -5,6 +5,7 @@ import { useTheme } from 'emotion-theming';
 import mq from '../util/breakpoints';
 
 import Navbar from './navbar';
+import Footer from './footer';
 
 const Layout = ({ children }) => {
   const theme = useTheme();
@@ -15,6 +16,8 @@ const Layout = ({ children }) => {
           html,
           body {
             margin: 0;
+            padding: 0;
+            height: 100%;
             background-color: ${theme.background};
             color: ${theme.text};
             font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
@@ -47,11 +50,14 @@ const Layout = ({ children }) => {
         css={css`
           display: grid;
           grid-template-columns: 1fr 4fr 1fr;
+          grid-template-rows: auto auto auto 1fr 1fr;
           grid-template-areas:
             'navbar navbar navbar'
             '.   .  .'
             '. main .'
-            '.   .  .';
+            '.   .  .'
+            'footer footer footer';
+
           ${mq[1]} {
             grid-template-columns: 1fr 10fr 1fr;
           }
@@ -68,6 +74,7 @@ const Layout = ({ children }) => {
         >
           {children}
         </main>
+        <Footer />
       </div>
     </>
   );

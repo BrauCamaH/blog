@@ -7,5 +7,5 @@ module.exports = {
   buttonText: '#ffffff',
   buttonHover: '#000',
   text: '#ffffff',
-  background: '#121212',
+  background: '#38383D',
 };

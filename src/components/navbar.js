@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from '@emotion/styled';
+import { useTranslation, Link } from '@3nvi/gatsby-theme-intl';
 import { useTheme } from 'emotion-theming';
 import { css } from '@emotion/core';
 import mq from '../util/breakpoints';
 
 import Toggle from './toggle';
 import MobileNav from './mobile-nav';
-import { Link } from 'gatsby';
 
 import profile from '../images/profile.jpg';
 
@@ -27,6 +27,7 @@ const NavLink = styled(Link)`
 
 const Navbar = () => {
   const theme = useTheme();
+  const { t } = useTranslation();
   return (
     <nav
       css={css`
@@ -91,13 +92,13 @@ const Navbar = () => {
         `}
       >
         <NavLink to="/blog/" activeClassName="current-page">
-          Blog
+          {t('nav.blog')}
         </NavLink>
         <NavLink to="/about/" activeClassName="current-page">
-          Acerca
+          {t('nav.about')}
         </NavLink>
         <NavLink to="/contact/" activeClassName="current-page">
-          Contacto
+          {t('nav.contact')}
         </NavLink>
       </div>
       <Toggle
